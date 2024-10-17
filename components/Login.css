@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: gainsboro;
+}
+.container{
+    width: 55vw;
+    height: 65vh;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.formContainer{
+    position: relative;
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border-radius: 100px 20px 20px 100px;
+    transition: all 0.8s ease-in-out;
+}
+.formContainer:last-child{
+    background-color: #f7067a;
+}
+form{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+form h1{
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+.container.active .formContainer:first-child{
+    transform: translateX(100%);
+}
+.container.active .formContainer:last-child{
+    transform: translateX(-100%);
+    border-radius: 20px 100px 100px 20px;
+}
+.loginWithSocial{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4vh;
+    margin-top: 4vh;
+}
+.loginInputs,.SignUpInputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.useAccount{
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 1vh;
+    color: gray;
+}
+.loginInputs input,.SignUpInputs input{
+    width: 22vw;
+    height: 6vh;
+    background-color: rgba(235, 235, 235, 0.678);
+    border: none;
+}
+.loginInputs input::placeholder,.SignUpInputs input::placeholder{
+    padding: 10px;
+}
+.loginInputs input:first-child,.SignUpInputs input:first-child{
+    margin-bottom: 2vh;
+}
+
+
+.SignUpInputs input:last-child{
+    margin-top: 2vh;
+}
+.forgotPasswordLink{
+    margin-top: 3vh;
+    color: gray;
+    font-weight: 100;
+    cursor: pointer;
+}
+.SignInButton ,.SignInUpButton{
+    margin-top: 3vh;
+    font-family: "Montserrat Alternates", sans-serif;
+    cursor: pointer;
+    padding: 15px 50px;
+    background-color: #f7067a;
+    color: white;
+    border: none;
+}
+.loginWithSocial button{
+    padding: 9px;
+    margin-left: 20px;
+    background-color: transparent;
+    border: 1px solid gray;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.loginWithSocial button:first-child{
+    margin-left: 0px;
+}
+.container .signUpForm{
+    display: none;
+    animation: hideIt 0.5s;
+}
+.container .signInForm{
+    animation: makeItVisible 0.5s;
+}
+.container.active .signInForm{
+    display: none;
+    animation: hideIt 0.5s;
+}
+.container.active .signUpForm{
+    display: flex;
+    animation:makeItVisible 0.5s;
+}
+
+@keyframes makeItVisible {
+    0%,74.99%{
+        opacity: 0;
+    }
+    75%,100%{
+        opacity: 1;
+    }
+}
+@keyframes hideIt {
+    0%,74.99%{
+        position: absolute;
+        display: flex;
+        
+    }
+    75%,100%{
+        display: none;
+    }
+}
+
+
+
+
+.SignUpText{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    color: white;
+    position: absolute;
+    animation: slideInFromRight 2.5s;
+
+}
+.SignUpText h1,.SignInText h1{
+    font-size: 25px;
+    margin-bottom: 8vh;
+    font-weight: 400;
+}
+.SignUpText p,.SignInText p{
+    font-size: 20px;
+    margin-left: 25px;
+    font-weight: 300;
+    font-family: "Montserrat Alternates";
+}
+.SignUpText button,.SignInText button{
+    color: white;
+    margin-top: 7vh;
+    padding: 10px 45px;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border:1px solid white;
+    background-color: transparent;
+}
+.SignUpText button:hover,.SignInText button:hover{
+    background-color: #fd248d83;
+}
+
+.SignInText{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    color: white;
+    position: absolute;
+}
+.container.active .SignUpText{
+    display: none;
+}
+.container.active .SignInText{
+    display: flex;
+    animation: slideInFromRight 2.5s;
+}
+@keyframes slideInFromLeft {
+    0%,24.99% {
+      /* Soldan başla */
+      opacity: 0;
+    }
+    25%,49.99%{
+        opacity: 0.2;
+    }
+    
+    50%,74.99% {
+    /* Normal pozisyona gel */
+      opacity: 0.5;
+    }
+    75%,100%{
+        opacity: 1;
+    }
+  }
+
+  @keyframes slideInFromRight {
+    0% {
+    /* Soldan başla */
+      opacity: 0;
+    }
+    100% {
+      /* Normal pozisyona gel */
+      opacity: 1;
+    }
+  }
